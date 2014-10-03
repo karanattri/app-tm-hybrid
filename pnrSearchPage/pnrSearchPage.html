@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>PNR Search</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="../jquery/jquery.mobile-1.4.3.min.css" />
+	<script src="../jquery/jquery-1.10.2.min.js"></script>
+	<script src="../jquery/jquery.mobile-1.4.3.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page" id="pnrSearchPage">
+
+	<div data-role="header">
+		<h1 class="ui-title" role="heading" aria-level="1">PNR Search</h1>
+		<!-- <a href="../landingPage/index.html" data-transition="fade" rel="external" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a> -->
+		<a href="../landingPage/index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" data-transition="fade" rel="external" >Back</a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+    	<input type="text" name="pnrInput" id="pnrInputBox" value="" type="text" pattern="[0-9]*" placeholder="search PNR"/>
+    	<button class="ui-btn ui-shadow ui-btn-a" onclick="console.log('check  cehckece')">search</button>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="pnrResultsPage">
+
+	<div data-role="header">
+		<h1 class="ui-title" role="heading" aria-level="1">PNR Search</h1>
+		<!-- <a href="../landingPage/index.html" data-transition="fade" rel="external" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a> -->
+		<a href="../landingPage/index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" data-transition="fade" rel="external" >Back</a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+    	<input type="text" name="pnrInput" id="pnrInputBox" value="" type="text" pattern="[0-9]*" placeholder="search PNR"/>
+    	<button class="ui-btn ui-shadow ui-btn-a" onclick="console.log('check  cehckece')">search</button>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>
