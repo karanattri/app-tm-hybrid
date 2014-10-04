@@ -2,6 +2,10 @@ var savePnrLocalKey = 'trainManSavedPNRs';
 var maxLocalPnrSave = 6;
 var kPnrSplitString = '|||';
 
+var pnrDetailDummyResponse = {"statusObject" : {"pnrNumber" : "9876543210", "bookingStatus": "B2, 56,GN", "currentStatus": "CNF", "confirmationChances": "100%"},
+							"pnrDetailsObject" : {"date" : "07-10-2014 (Tuesday)", "class" : "3A", "trainNumber" : "12451", "trainName" : "SHRAM SHKTI EXP",
+												  "fromName" : "Kanpur Central", "toName" : "New Delhi", "deptTime" : "23:45", "arrivalTime" : "06:30"}};
+
 var pnrSearchJSObject = {
 
 	changeToPNRDetailPage : function (pnrString) {
@@ -86,6 +90,7 @@ var pnrSearchJSObject = {
 	fetchPNRDetailWithPNR : function(pnrString) {
 		// fetch PNR detail here
 		$.mobile.changePage( "#pnrDetailsPage", { transition: "slide" } );
+		$('.pnrDetailsPage-title').text('pnr: '+ pnrString);
 	},
 
 	checkAndSavePNRStr : function (newSavePNRString) {
@@ -94,8 +99,13 @@ var pnrSearchJSObject = {
 		if (pnrStrArray.length > maxLocalPnrSave) {
 			var newString = '';
 			for (var i = 0; i < maxLocalPnrSave; i++) {
-				newString += pnrStrArray[i] + kPnrSplitString; 
+				var splitString = kPnrSplitString;
+				if (i == maxLocalPnrSave - 1) {
+					splitString = '';
+				}
+				newString += pnrStrArray[i] + splitString; 
 			}
+			localStorage.setItem(savePnrLocalKey , newString);
 		}
 	},
 

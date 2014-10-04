@@ -8,6 +8,7 @@
 	<script src="../jquery/jquery.mobile-1.4.3.min.js"></script>
 
 	<script type="text/javascript" src="pnrSearchPage.js"></script>
+	<link rel="stylesheet" href="../globalCSS.css" />
 </head> 
 <body> 
 
@@ -22,7 +23,7 @@
 	<div data-role="content">
     	<input type="text" name="pnrInput" id="pnrInputBox" value="" type="text" pattern="[0-9]*" placeholder="search PNR"/>
     	<button style="background-color:#145A7A;border-color:#145A7A" class="ui-btn ui-shadow ui-btn-b" onclick="pnrSearchJSObject.changeToPNRDetailPage('')">search</button>
-    	<h4 style="text-align:center">____</h4>
+    	<h4 class="align-children-center">____</h4>
     	<h4 class="align-left" id="recentSearchesTitleId">recent searches</h4>
     	<ul id="recentSearchesListContainerId" data-role="listview" data-inset="true" data-filter="false">
     	</ul>
@@ -33,19 +34,41 @@
 <div data-role="page" id="pnrDetailsPage">
 
 	<div data-role="header">
-		<h1 class="ui-title" role="heading" aria-level="1">PNR Search</h1>
+		<h1 class="ui-title pnrDetailsPage-title" role="heading" aria-level="1">PNR Search</h1>
 		<a href="#pnrSearchPage" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" data-transition="fade" rel="external" >Back</a>
 	</div><!-- /header -->
 
 	<div data-role="content">
     	<form>
-			<fieldset data-role="controlgroup" data-type="horizontal">
+			<fieldset class="align-children-center" data-role="controlgroup" data-type="horizontal">
 			    <input type="radio" name="radio-pnrDetail-trending" id="radio-pnrDetail-trending-Status" value="on" checked="checked">
 			    <label for="radio-pnrDetail-trending-Status">Status</label>
 			    <input type="radio" name="radio-pnrDetail-trending" id="radio-pnrDetail-trending-Trend" value="off">
 			    <label for="radio-pnrDetail-trending-Trend">Trends</label>
 			</fieldset>
 		</form>
+
+		<!-- PNR Status content -->
+		<div id="pnrDetailsStatusDivId" class="small-font-size-all">
+			<h4 class="align-left" id="recentSearchesTitleId">Status</h4>
+			<div class="ui-grid-a">
+    			<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:32px">Booking Status</div></div>
+    			<div class="ui-block-b"><div class="ui-bar ui-bar-a light-font-child" style="height:32px">B2 , 56,GN</div></div>
+			</div>
+			<div class="ui-grid-a">
+    			<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:32px">Current Status</div></div>
+    			<div class="ui-block-b"><div class="ui-bar ui-bar-a light-font-child" style="height:32px">CNF</div></div>
+			</div>
+			<div class="ui-grid-a">
+    			<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:32px">Confirmation chances</div></div>
+    			<div class="ui-block-b"><div class="ui-bar ui-bar-a light-font-child ticket-confirm-color" style="height:32px">100%</div></div>
+			</div>
+
+			<h4 class="align-left" id="recentSearchesTitleId">Booking Details</h4>
+		</div>
+
+		<!-- PNR Trends Content here -->
+		<div id="pnrDetailsTrendsDivId"></div>
 	</div><!-- /content -->
 
 </div><!-- /page -->
